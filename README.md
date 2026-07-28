@@ -80,6 +80,12 @@ These are planned validation targets, not a claim of current support. See the
 - [Roadmap](ROADMAP.md)
 - [Portuguese summary](README.pt.md)
 
+## Research
+
+Phase 0 research is tracked openly under [`research/`](research/README.md). The initial
+work defines a safe, non-executing methodology, a 12-skill candidate corpus, and a
+common result schema for comparing compatibility and security tools.
+
 ## Contributing
 
 The project is currently documentation-first. Research corrections, test cases, and
