@@ -15,6 +15,14 @@ produces credible estimates.
 - interview or collect feedback from skill authors and users;
 - decide the implementation language after prototyping parsers and report formats.
 
+Current research artifacts:
+
+- [Research plan](research/README.md)
+- [Methodology](research/methodology.md)
+- [Candidate corpus](research/corpus.yml)
+- [Result schema](research/result-schema.md)
+- [Initial observations](research/findings-001.md)
+
 **Exit criteria**
 
 - the project has at least five documented user problems;
