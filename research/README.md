@@ -17,6 +17,13 @@ path, but complete repository snapshots have not yet been pinned or downloaded.
 
 No skill in the corpus has been executed by this project.
 
+## Workboard
+
+1. [Pin and admit the initial 12-skill corpus](https://github.com/ricardoml96/agent-skill-lab/issues/1)
+2. [Create manual compatibility baselines](https://github.com/ricardoml96/agent-skill-lab/issues/2)
+3. [Compare existing scanners safely](https://github.com/ricardoml96/agent-skill-lab/issues/3)
+4. [Draft the normalized capability taxonomy](https://github.com/ricardoml96/agent-skill-lab/issues/4)
+
 ## Research questions
 
 1. Which structural and packaging failures are missed by security-first scanners?
