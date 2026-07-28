@@ -5,17 +5,19 @@ Phase 0 exists to test the Agent Skill Lab product thesis before implementation.
 ## Current artifacts
 
 - [Methodology](methodology.md) — how samples and tools will be compared safely.
-- [Candidate corpus](corpus.yml) — 12 public skill packages selected for diversity.
+- [Admitted corpus](corpus.yml) — 12 public skill packages pinned for research.
+- [Complete inventories](inventories.yml) — immutable tree and file identities.
+- [Admission report](admission-001.md) — pinning, licensing, and replacement decisions.
 - [Result schema](result-schema.md) — common structure for normalized observations.
 - [Initial observations](findings-001.md) — evidence gathered before running scanners.
 - [Fixture policy](fixtures/README.md) — rules for future controlled test fixtures.
 
 ## Current status
 
-The corpus is **candidate-only**. Each entry has been confirmed to exist at the stated
-path, but complete repository snapshots have not yet been pinned or downloaded.
+The corpus contains **12 admitted samples** pinned to immutable repository commits.
+Their 103 files have complete Git inventories and independent inventory hashes.
 
-No skill in the corpus has been executed by this project.
+No skill in the corpus has been installed or executed by this project.
 
 ## Workboard
 
