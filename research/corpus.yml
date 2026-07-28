@@ -1,0 +1,198 @@
+schema_version: "0.1"
+status: candidate
+selected_at: "2026-07-28"
+selection_note: >-
+  Paths and SKILL.md blob identities were confirmed through GitHub. Repository commits,
+  complete directory hashes, licenses, and redistribution constraints must be pinned
+  before a sample is admitted to comparative testing.
+
+samples:
+  - id: ASL-C001
+    name: template-skill
+    repository: anthropics/skills
+    ref: main
+    skill_root: template
+    skill_md_blob_sha: 50a4f9b104357d96361e257adb70454604cd15c0
+    source_url: https://github.com/anthropics/skills/tree/main/template
+    category: canonical-minimal
+    rationale: Minimal canonical template for baseline structure checks.
+    expected_features:
+      - required-frontmatter
+      - instruction-only
+    license_review: pending
+
+  - id: ASL-C002
+    name: doc-coauthoring
+    repository: anthropics/skills
+    ref: main
+    skill_root: skills/doc-coauthoring
+    skill_md_blob_sha: a5a69839ef4a161131d80b6daef10037a9686f4a
+    source_url: https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring
+    category: instruction-workflow
+    rationale: Structured, predominantly instructional workflow without a platform installer.
+    expected_features:
+      - progressive-workflow
+      - natural-language-procedure
+    license_review: pending
+
+  - id: ASL-C003
+    name: pptx
+    repository: anthropics/skills
+    ref: main
+    skill_root: skills/pptx
+    skill_md_blob_sha: 41cd2306977f269bb1d8169a9643b35053aa66bd
+    source_url: https://github.com/anthropics/skills/tree/main/skills/pptx
+    category: complex-multifile
+    rationale: Production-derived package with scripts, references, and document tooling.
+    expected_features:
+      - scripts
+      - references
+      - external-binaries
+      - complex-description
+    license_review: source-available-review-required
+
+  - id: ASL-C004
+    name: handoff
+    repository: openclaw/agent-skills
+    ref: main
+    skill_root: skills/handoff
+    skill_md_blob_sha: 50054b4079bcc25492e27cae7b72ea748a853cc9
+    source_url: https://github.com/openclaw/agent-skills/tree/main/skills/handoff
+    category: portable-instruction
+    rationale: Small instruction-only skill explicitly distributed for multiple coding agents.
+    expected_features:
+      - instruction-only
+      - cross-agent-installation
+    license_review: pending
+
+  - id: ASL-C005
+    name: autoreview
+    repository: openclaw/agent-skills
+    ref: main
+    skill_root: skills/autoreview
+    skill_md_blob_sha: a59642db760c10dac574c3d73885d7bf4aa90004
+    source_url: https://github.com/openclaw/agent-skills/tree/main/skills/autoreview
+    category: script-assisted
+    rationale: Operational workflow with bundled helper scripts and agent selection.
+    expected_features:
+      - scripts
+      - process-execution
+      - multiple-agent-backends
+    license_review: pending
+
+  - id: ASL-C006
+    name: beam
+    repository: openclaw/agent-skills
+    ref: main
+    skill_root: skills/beam
+    skill_md_blob_sha: 7636fcc6ad3e0a61fb9019b2ef6f4f290608a945
+    source_url: https://github.com/openclaw/agent-skills/tree/main/skills/beam
+    category: network-and-auth
+    rationale: Multi-file skill involving redaction, authentication, and publication.
+    expected_features:
+      - scripts
+      - references
+      - network-access
+      - authentication
+      - data-redaction
+    license_review: pending
+
+  - id: ASL-C007
+    name: llm-wiki
+    repository: NousResearch/hermes-agent
+    ref: main
+    skill_root: skills/research/llm-wiki
+    skill_md_blob_sha: 7dc708c9a5fce649b853f87e75ae4bbf853aa2ce
+    source_url: https://github.com/NousResearch/hermes-agent/tree/main/skills/research/llm-wiki
+    category: hermes-native-workflow
+    rationale: Hermes-authored, cross-platform workflow with extended frontmatter.
+    expected_features:
+      - extended-frontmatter
+      - filesystem-write
+      - knowledge-base-workflow
+    license_review: pending
+
+  - id: ASL-C008
+    name: ocr-and-documents
+    repository: NousResearch/hermes-agent
+    ref: main
+    skill_root: skills/productivity/ocr-and-documents
+    skill_md_blob_sha: 7f6e7bf2c54e3b2fd23cb698e075fb6fefd80fac
+    source_url: https://github.com/NousResearch/hermes-agent/tree/main/skills/productivity/ocr-and-documents
+    category: external-tooling
+    rationale: Cross-platform document workflow using local packages and remote extraction.
+    expected_features:
+      - extended-frontmatter
+      - network-access
+      - python-dependencies
+      - external-tools
+    license_review: pending
+
+  - id: ASL-C009
+    name: init-onecli
+    repository: nanocoai/nanoclaw
+    ref: main
+    skill_root: .claude/skills/init-onecli
+    skill_md_blob_sha: 5972a95890e72be03a8cd849433a361d4d7cdf16
+    source_url: https://github.com/nanocoai/nanoclaw/tree/main/.claude/skills/init-onecli
+    category: credential-migration
+    rationale: Platform-specific setup workflow that handles credential migration.
+    expected_features:
+      - platform-specific-path
+      - credential-handling
+      - installation
+      - process-execution
+    license_review: pending
+
+  - id: ASL-C010
+    name: setup
+    repository: nanocoai/nanoclaw
+    ref: main
+    skill_root: .claude/skills/setup
+    skill_md_blob_sha: 54e2458738ac4eba268d12db9ce3b523123c923c
+    source_url: https://github.com/nanocoai/nanoclaw/tree/main/.claude/skills/setup
+    category: platform-installer
+    rationale: First-run platform installer with interactive decisions and system changes.
+    expected_features:
+      - platform-specific-path
+      - interactive-setup
+      - installation
+      - system-configuration
+    license_review: pending
+
+  - id: ASL-C011
+    name: jetson-init-source
+    repository: NVIDIA/skills
+    ref: main
+    skill_root: skills/jetson-init-source
+    skill_md_blob_sha: 4dec5c75d14eb81e41354df5fe412fdfd7f908a6
+    source_url: https://github.com/NVIDIA/skills/tree/main/skills/jetson-init-source
+    category: signed-governed-package
+    rationale: Complex vendor skill with signature, skill card, evaluation, and toolchain requirements.
+    expected_features:
+      - signed-artifacts
+      - governance-card
+      - evaluations
+      - external-toolchain
+      - filesystem-write
+    license_review: pending
+
+  - id: ASL-C012
+    name: supabase-postgres-best-practices
+    repository: supabase/agent-skills
+    ref: main
+    skill_root: skills/supabase-postgres-best-practices
+    skill_md_blob_sha: d9ef1949f807d0b41ca85d9a0837ad78bf1c58de
+    source_url: https://github.com/supabase/agent-skills/tree/main/skills/supabase-postgres-best-practices
+    category: documented-portability-case
+    rationale: >-
+      Multi-file reference package associated with public reports of URL installation
+      omitting supporting files in Hermes, useful for testing package-integrity checks.
+    expected_features:
+      - many-references
+      - installation-portability
+      - content-discovery
+    related_evidence:
+      - https://github.com/NousResearch/hermes-agent/issues/35125
+      - https://github.com/supabase/agent-skills/issues/50
+    license_review: pending
