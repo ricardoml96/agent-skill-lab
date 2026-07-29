@@ -1,30 +1,21 @@
 # Normalized Research Result Schema
 
-**Schema status:** draft 0.1
+**Schema status:** research 0.2
 
-This document defines the information that every Phase 0 sample result should contain.
+This document defines the information that every Phase 0 sample result must contain.
 It is a research interchange model, not yet the product's public JSON contract.
+
+Version 0.2 adds rule-level compatibility evidence and separates manual static
+inspection from future analyzer execution.
 
 ## Top-level record
 
 ```yaml
-schema_version: "0.1"
-sample:
-  corpus_id: ASL-C001
-  repository: owner/repository
-  commit: full-commit-sha
-  skill_root: path/to/skill
-  tree_hash: sha256
-
-environment:
-  run_id: unique-id
-  started_at: ISO-8601
-  operating_system: string
-  container_image: immutable-reference
-  network: disabled
-  ambient_credentials: false
-
+schema_version: "0.2"
+sample: {}
+review: {}
 manual_baseline: {}
+evidence: []
 compatibility: []
 analyzer_runs: []
 normalized_findings: []
@@ -34,33 +25,43 @@ limitations: []
 
 ## Sample identity
 
-The admitted sample must identify:
+```yaml
+sample:
+  corpus_id: ASL-C001
+  name: example
+  repository: owner/repository
+  commit: full-commit-sha
+  skill_root: path/to/skill
+  skill_md_blob_sha: git-blob-sha
+  git_tree_sha: git-tree-sha
+  inventory_sha256: sha256
+  license:
+    identifier: SPDX-or-recorded-value
+    evidence: path
+```
 
-- corpus ID;
-- repository and immutable commit;
-- skill root;
-- recursive file inventory hash;
-- license or usage constraint;
-- selection category;
-- date admitted.
-
-A `SKILL.md` blob hash alone is insufficient because scripts and references can change
+The admitted sample must identify its corpus ID, immutable repository commit, skill
+root, recursive inventory identity, license evidence, and exact `SKILL.md` blob. A
+`SKILL.md` hash alone is insufficient because scripts and references can change
 independently.
 
-## Environment
+## Manual review
 
-Record:
+```yaml
+review:
+  review_id: ASL-C001-manual-001
+  mode: static_manual
+  reviewer: identifier
+  reviewed_at: ISO-8601-date-or-timestamp
+  source_access: pinned-git-objects
+  content_installed: false
+  content_executed: false
+  sample_urls_contacted: false
+  secret_values_accessed: false
+```
 
-- unique run identifier;
-- exact container or virtual-machine image;
-- host architecture where relevant;
-- network policy;
-- mounted paths and read/write mode;
-- whether environment variables were present;
-- resource limits;
-- start and end timestamps.
-
-Sensitive values must never appear.
+Manual review records what was and was not done. It must not be represented as an
+analyzer run with an invented command, exit code, duration, or execution environment.
 
 ## Manual baseline
 
@@ -73,6 +74,7 @@ manual_baseline:
     references: []
     assets: []
     package_manifests: []
+    symlinks: []
   declared_capabilities: []
   inferred_capabilities: []
   external_urls: []
@@ -81,23 +83,57 @@ manual_baseline:
   observations: []
 ```
 
+This section is descriptive. A capability may be inferred from explicit prose or a
+command reference, but inference must be labeled and must not imply availability,
+permission, safety, or successful execution.
+
+## Evidence
+
+```yaml
+evidence:
+  - id: ASL-C001-E001
+    location:
+      path: SKILL.md
+      start_line: 1
+      end_line: 4
+    fact: Bounded quotation, paraphrase, or structured fact.
+    supports_rules: [AS-PKG-001, AS-DOC-001]
+```
+
+Evidence must be bounded and must not reproduce unnecessary third-party content.
+Inventory evidence may point to `corpus.yml` or `inventories.yml`. Every applied rule
+must reference evidence or state why evidence is unavailable.
+
 ## Compatibility result
 
 ```yaml
 compatibility:
   - profile: agent-skills
     profile_version: "research-0.1"
-    target_version: unknown
+    target_version: specification-blob-identifier
+    surface: core
     layers:
       package_structure: compatible
       platform_packaging: not_applicable
       capability_availability: unknown
       behavioral_conformance: not_tested
       operational_suitability: unknown
+    rules:
+      AS-PKG-001:
+        result: pass
+        confidence: high
+        evidence_refs: [ASL-C001-E001]
+        remediation: null
+    not_applicable_rules: []
+    skipped_rules: []
     observations: []
 ```
 
-Allowed result values:
+Each compatibility entry identifies one profile surface. Platform profiles may use
+separate entries or surface-specific fields when runtime, publication, import, or
+distribution results differ.
+
+Allowed layer result values:
 
 - `compatible`
 - `compatible_with_conditions`
@@ -105,6 +141,18 @@ Allowed result values:
 - `unknown`
 - `not_applicable`
 - `not_tested`
+
+Allowed rule result values:
+
+- `pass`
+- `fail`
+- `conditional`
+- `unknown`
+- `not_applicable`
+- `not_tested`
+
+`not_applicable_rules` must list every excluded rule ID or documented rule group.
+`skipped_rules` requires a reason; it must not be used to hide missing evidence.
 
 ## Analyzer run
 
@@ -126,6 +174,10 @@ analyzer_runs:
     errors: []
 ```
 
+Analyzer runs remain empty during the manual-baseline stage. When scanners are later
+approved, their actual command, environment, data flow, exit status, duration, and raw
+output identity must be recorded.
+
 ## Normalized finding
 
 ```yaml
@@ -138,17 +190,15 @@ normalized_findings:
     category: compatibility.missing-resource
     severity: medium
     confidence: high
-    compatibility_layers:
-      - platform-packaging
-    targets:
-      - hermes
+    compatibility_layers: [platform-packaging]
+    targets: [hermes-agent]
     location:
       path: SKILL.md
       start_line: 10
       end_line: 12
-    evidence: bounded text or structured fact
-    explanation: why the evidence matters
-    remediation: proposed action
+    evidence_refs: [ASL-C001-E001]
+    explanation: Why the evidence matters.
+    remediation: Proposed action.
     disposition: unresolved
 ```
 
@@ -169,7 +219,7 @@ disagreements:
   - id: ASL-D-0001
     finding_refs: [ASL-F-0001, ASL-F-0002]
     type: different-rule-scope
-    summary: concise description
+    summary: Concise description.
     resolution: unresolved
     evidence_refs: []
     reviewers: []
@@ -181,5 +231,7 @@ disagreements:
 - Never merge findings in a way that removes provenance.
 - Never convert `unknown` into `compatible`.
 - Never infer `safe` from an empty finding list.
+- Keep profile surfaces and compatibility layers separate.
+- Record absent optional fields as `not_applicable`, not `pass`.
 - Schema changes must be versioned and documented.
 - Human-readable reports must be derivable from the normalized record.
