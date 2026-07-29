@@ -71,12 +71,13 @@ Every result must identify which layers were evaluated.
 | Agent Skills | [Research profile 0.1](../research/profiles/agent-skills-research-0.1.md): core folder and metadata conformance | <https://agentskills.io/specification> |
 | OpenClaw / ClawHub | [Research profile 0.1](../research/profiles/openclaw-research-0.1.md): runtime discovery, eligibility, and optional ClawHub publication surfaces | <https://github.com/openclaw/openclaw/blob/main/docs/tools/skills.md> and <https://github.com/openclaw/clawhub/blob/main/docs/skill-format.md> |
 | Hermes Agent | [Research profile 0.1](../research/profiles/hermes-agent-research-0.1.md): runtime discovery, conditional activation, setup declarations, and optional distribution surfaces | <https://hermes-agent.nousresearch.com/docs/user-guide/features/skills> |
-| NanoClaw | Skill-based installation and customization assumptions | <https://github.com/nanocoai/nanoclaw> |
-| Codex | Skill package conventions supported by Codex | Official Codex documentation and fixtures, to be pinned during research |
-| Claude Code | Custom skill discovery and packaging | Official Claude Agent Skills documentation and fixtures |
+| NanoClaw | Deferred beyond the initial Phase 0 baseline | Primary sources to be pinned if the profile is resumed |
+| Codex | Deferred beyond the initial Phase 0 baseline | Official Codex documentation to be pinned if the profile is resumed |
+| Claude Code | Deferred beyond the initial Phase 0 baseline | Official Claude Agent Skills documentation to be pinned if the profile is resumed |
 
 The Agent Skills, OpenClaw, and Hermes Agent research profiles are now defined. The
-remaining platform profiles are still planned.
+remaining platform profiles are explicitly deferred until this narrower baseline has
+demonstrated value.
 
 ## Versioning
 
