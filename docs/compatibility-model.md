@@ -68,14 +68,15 @@ Every result must identify which layers were evaluated.
 
 | Profile | Planned static scope | Primary references |
 |---|---|---|
-| Agent Skills | Core folder and metadata conformance | <https://agentskills.io/home> |
+| Agent Skills | [Research profile 0.1](../research/profiles/agent-skills-research-0.1.md): core folder and metadata conformance | <https://agentskills.io/specification> |
 | OpenClaw / ClawHub | Publishing metadata and runtime requirements | <https://github.com/openclaw/clawhub/blob/main/docs/skill-format.md> |
 | Hermes Agent | Standard compatibility and discovery conventions | <https://hermes-agent.nousresearch.com/docs/user-guide/features/skills> |
 | NanoClaw | Skill-based installation and customization assumptions | <https://github.com/nanocoai/nanoclaw> |
 | Codex | Skill package conventions supported by Codex | Official Codex documentation and fixtures, to be pinned during research |
 | Claude Code | Custom skill discovery and packaging | Official Claude Agent Skills documentation and fixtures |
 
-No profile is implemented yet.
+The Agent Skills research profile is now defined. The remaining platform profiles are
+still planned.
 
 ## Versioning
 
