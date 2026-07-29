@@ -98,10 +98,12 @@ skill, but it means the skill is unavailable in the evaluated context.
 | `HA-DOC-002` | Inventory | Platform packaging | Record optional `version`, `author`, `license`, `platforms`, Hermes metadata, environment, and credential declarations. | No direct failure |
 | `HA-DOC-003` | Advisory | Platform packaging | The body clearly states when to use the skill, its procedure, pitfalls, and verification guidance. | Observation only |
 | `HA-DOC-004` | Advisory | Platform packaging | Common instructions stay in `SKILL.md`; detailed references and supporting material are loaded on demand. | Observation only |
-| `HA-DOC-005` | Advisory | Platform packaging | The description remains concise and useful for matching; Hermes' authoring workflow recommends no more than 60 characters. | Observation only |
+| `HA-DOC-005` | Advisory | Platform packaging | The trigger and distinctive behavior are clear near the start of the description because Hermes truncates long descriptions in its prompt index; the `/learn` authoring path targets approximately 60 characters. | Observation only |
 
-The 60-character description guidance is a Hermes authoring recommendation, not a
-portable Agent Skills limit and not a runtime incompatibility threshold.
+Hermes enforces the core maximum of 1024 characters, while its authoring reference says
+the prompt index shows the first 57 characters plus an ellipsis. The approximately
+60-character guidance belongs to the `/learn` authoring path; it is not a separate
+format limit or runtime incompatibility threshold.
 
 ### Platform visibility
 
