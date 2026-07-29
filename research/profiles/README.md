@@ -49,4 +49,4 @@ safe.
 ## Profiles
 
 - [Agent Skills research profile 0.1](agent-skills-research-0.1.md)
-
+- [OpenClaw research profile 0.1](openclaw-research-0.1.md)
