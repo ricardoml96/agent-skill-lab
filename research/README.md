@@ -9,6 +9,8 @@ Phase 0 exists to test the Agent Skill Lab product thesis before implementation.
 - [Complete inventories](inventories.yml) — immutable tree and file identities.
 - [Admission report](admission-001.md) — pinning, licensing, and replacement decisions.
 - [Result schema](result-schema.md) — common structure for normalized observations.
+- [Compatibility profiles](profiles/README.md) — versioned rules derived from primary
+  platform documentation.
 - [Initial observations](findings-001.md) — evidence gathered before running scanners.
 - [Fixture policy](fixtures/README.md) — rules for future controlled test fixtures.
 
