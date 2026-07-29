@@ -109,12 +109,14 @@ target installation context was supplied.
 
 | Rule ID | Level | Layer | Check | Failure effect |
 |---|---|---|---|---|
-| `OC-DOC-001` | Required | Platform packaging | Frontmatter contains non-empty `name` and `description` fields accepted by the core profile. | `platform_packaging: incompatible` |
-| `OC-DOC-002` | Inventory | Platform packaging | Record OpenClaw-specific top-level keys and namespaced metadata without treating unknown extensions as commands. | No direct failure |
+| `OC-DOC-001` | Required | Platform packaging | Frontmatter contains a non-empty `description` string accepted by the core profile. | `platform_packaging: incompatible` |
+| `OC-DOC-002` | Conditional | Platform packaging | When `name` is present, it is a non-empty string. When it is absent, derive and record the effective name from the parent directory as OpenClaw's documented compatibility fallback. | `platform_packaging: incompatible` only when no effective name can be derived |
+| `OC-DOC-003` | Inventory | Platform packaging | Record OpenClaw-specific top-level keys and namespaced metadata without treating unknown extensions as commands. | No direct failure |
 
-Although OpenClaw may derive a missing name from the directory, its documented minimum
-format requires both fields. The fallback is compatibility behavior, not the portable
-authoring target used by this profile.
+OpenClaw's authoring guidance asks for both `name` and `description`, but its discovery
+rules explicitly derive a missing `name` from the directory. This profile therefore
+records the fallback as runtime-compatible while the separate strict Agent Skills
+profile still reports the missing required `name` as a core-format failure.
 
 ### Invocation fields
 
