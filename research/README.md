@@ -13,6 +13,8 @@ Phase 0 exists to test the Agent Skill Lab product thesis before implementation.
   platform documentation.
 - [Manual compatibility results](results/README.md) — rule-level static baselines for
   admitted samples.
+- [SkillSpector differentiation check](skillspector-comparison-001.md) — pinned
+  documentary comparison and go-or-stop execution gate.
 - [Initial observations](findings-001.md) — evidence gathered before running scanners.
 - [Fixture policy](fixtures/README.md) — rules for future controlled test fixtures.
 
