@@ -2,7 +2,7 @@
 
 An open-source, vendor-neutral test lab for AI agent skills.
 
-> **Project status:** discovery and specification. No executable release exists yet.
+> **Project status:** v0.1 scope definition. No executable release exists yet.
 
 Agent Skill Lab aims to help skill authors and users answer four practical questions:
 
@@ -32,7 +32,7 @@ inspect -> validate -> describe capabilities -> test -> report
 
 ## Planned first release
 
-The first release is intentionally limited. It will:
+The proposed v0.1 is intentionally limited. It will:
 
 - inspect a local skill directory without executing its contents;
 - validate the core Agent Skills structure and metadata;
@@ -42,17 +42,17 @@ The first release is intentionally limited. It will:
 - export deterministic Markdown and JSON reports;
 - run locally without uploading the skill.
 
-See [Product Scope](docs/product-scope.md) and [Roadmap](ROADMAP.md).
+See [Version 0.1 Scope](docs/v0.1-scope.md), [Product Scope](docs/product-scope.md),
+and [Roadmap](ROADMAP.md).
 
 ## Initial compatibility targets
 
 - Agent Skills open format
 - OpenClaw / ClawHub
 - Hermes Agent
-- NanoClaw
-- Codex and Claude Code, where their skill conventions overlap with the open format
 
-These are planned validation targets, not a claim of current support. See the
+NanoClaw, Codex, Claude Code, and other runtimes are deferred. The three listed
+profiles are planned validation targets, not a claim of current support. See the
 [Compatibility Model](docs/compatibility-model.md).
 
 ## Principles
@@ -72,6 +72,7 @@ These are planned validation targets, not a claim of current support. See the
 ## Documentation
 
 - [Vision](VISION.md)
+- [Version 0.1 Scope](docs/v0.1-scope.md)
 - [Product Scope](docs/product-scope.md)
 - [Competitive Landscape](docs/competitive-landscape.md)
 - [Threat Model](docs/threat-model.md)
@@ -82,9 +83,10 @@ These are planned validation targets, not a claim of current support. See the
 
 ## Research
 
-Phase 0 research is tracked openly under [`research/`](research/README.md). The initial
-work defines a safe, non-executing methodology, a 12-skill candidate corpus, and a
-common result schema for comparing compatibility and security tools.
+Phase 0 research is tracked openly under [`research/`](research/README.md). Three
+manual baselines and a pinned SkillSpector comparison confirmed a narrow offline
+compatibility gap. The remaining broad corpus work is paused in favor of the v0.1
+rule proof.
 
 ## Contributing
 

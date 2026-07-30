@@ -1,5 +1,9 @@
 # Product Scope
 
+> The near-term implementation boundary is defined by
+> [Agent Skill Lab v0.1 Scope](v0.1-scope.md). Broader items below remain conceptual
+> and deferred until the v0.1 rule proof demonstrates user value.
+
 ## Working product
 
 **Name:** Agent Skill Lab  
