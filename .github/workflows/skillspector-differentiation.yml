@@ -71,6 +71,11 @@ jobs:
             docker run --rm \
               --network none \
               --read-only \
+              --cap-drop ALL \
+              --security-opt no-new-privileges \
+              --pids-limit 256 \
+              --memory 2g \
+              --cpus 2 \
               --tmpfs /tmp:rw,noexec,nosuid,size=256m \
               --volume "${source_mount}:/sources:ro" \
               skillspector:2.5.0 \
@@ -117,4 +122,3 @@ jobs:
             ASL-C007 \
             /tmp/hermes-agent \
             skills/research/llm-wiki
-
