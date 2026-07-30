@@ -23,7 +23,8 @@ Their 103 files have complete Git inventories and independent inventory hashes.
 
 No skill in the corpus has been installed or executed by this project.
 
-The first pilot compatibility baseline is complete for `ASL-C004` (`handoff`).
+The pilot baseline is complete for `ASL-C004` (`handoff`), and the Hermes-native
+`ASL-C007` (`llm-wiki`) baseline is ready for review.
 
 ## Workboard
 
