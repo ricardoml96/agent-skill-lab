@@ -15,6 +15,8 @@ Phase 0 exists to test the Agent Skill Lab product thesis before implementation.
   admitted samples.
 - [SkillSpector differentiation check](skillspector-comparison-001.md) — pinned
   documentary comparison and go-or-stop execution gate.
+- [SkillSpector differentiation execution](skillspector-execution-001.md) — isolated
+  offline run, result comparison, and provisional product decision.
 - [Initial observations](findings-001.md) — evidence gathered before running scanners.
 - [Fixture policy](fixtures/README.md) — rules for future controlled test fixtures.
 
