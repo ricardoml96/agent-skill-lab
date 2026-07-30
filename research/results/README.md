@@ -17,6 +17,7 @@ Results are research artifacts, not safety certifications or endorsements.
 | Sample | Name | Status |
 |---|---|---|
 | `ASL-C004` | `handoff` | [Pilot baseline complete](ASL-C004.yml) |
-| `ASL-C007` | `llm-wiki` | [Baseline ready for review](ASL-C007.yml) |
+| `ASL-C005` | `autoreview` | [Baseline complete](ASL-C005.yml) |
+| `ASL-C007` | `llm-wiki` | [Baseline complete](ASL-C007.yml) |
 
-Ten admitted samples remain pending.
+Nine admitted samples remain pending.
