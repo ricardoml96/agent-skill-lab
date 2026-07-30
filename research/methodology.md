@@ -110,9 +110,10 @@ Apply versioned manual profiles for:
 
 - OpenClaw / ClawHub;
 - Hermes Agent;
-- NanoClaw;
-- Codex;
-- Claude Code.
+
+NanoClaw, Codex, and Claude Code are deferred until the initial Agent Skills,
+OpenClaw, and Hermes profiles have been applied to the corpus and shown to be useful.
+Deferral is not a compatibility result.
 
 Compatibility is evaluated by layers:
 
@@ -217,8 +218,6 @@ Before publishing comparative results:
   <https://github.com/openclaw/clawhub/blob/main/docs/skill-format.md>
 - Hermes skills:
   <https://hermes-agent.nousresearch.com/docs/user-guide/features/skills>
-- NanoClaw:
-  <https://github.com/nanocoai/nanoclaw>
 - NVIDIA SkillSpector: <https://github.com/NVIDIA/SkillSpector>
 - Cisco Skill Scanner: <https://github.com/cisco-ai-defense/skill-scanner>
 - Snyk Agent Scan: <https://github.com/snyk/agent-scan>

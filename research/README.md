@@ -11,6 +11,8 @@ Phase 0 exists to test the Agent Skill Lab product thesis before implementation.
 - [Result schema](result-schema.md) — common structure for normalized observations.
 - [Compatibility profiles](profiles/README.md) — versioned rules derived from primary
   platform documentation.
+- [Manual compatibility results](results/README.md) — rule-level static baselines for
+  admitted samples.
 - [Initial observations](findings-001.md) — evidence gathered before running scanners.
 - [Fixture policy](fixtures/README.md) — rules for future controlled test fixtures.
 
@@ -20,6 +22,8 @@ The corpus contains **12 admitted samples** pinned to immutable repository commi
 Their 103 files have complete Git inventories and independent inventory hashes.
 
 No skill in the corpus has been installed or executed by this project.
+
+The first pilot compatibility baseline is complete for `ASL-C004` (`handoff`).
 
 ## Workboard
 
