@@ -20,9 +20,11 @@ review:
   reviewer: codex-assisted-manual-review
   reviewed_at: "2026-07-29"
   source_access: github-connector-at-pinned-commit
+  source_network_accessed: true
   content_installed: false
   content_executed: false
-  sample_urls_contacted: false
+  skill_referenced_urls_contacted: false
+  third_party_content_vendored: false
   secret_values_accessed: false
 
 manual_baseline:
