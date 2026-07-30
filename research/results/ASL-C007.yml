@@ -299,7 +299,11 @@ compatibility:
         remediation: Move optional integrations and detailed templates to focused files loaded on demand.
       HA-DOC-005: {result: pass, confidence: high, evidence_refs: [ASL-C007-E002], remediation: null}
       HA-PLAT-001: {result: pass, confidence: high, evidence_refs: [ASL-C007-E002], remediation: null}
-      HA-PLAT-002: {result: pass, confidence: high, evidence_refs: [ASL-C007-E002], remediation: null}
+      HA-PLAT-002:
+        result: unknown
+        confidence: high
+        evidence_refs: [ASL-C007-E002]
+        remediation: Record the operating system of the target Hermes environment.
       HA-RES-001: {result: pass, confidence: high, evidence_refs: [ASL-C007-E009], remediation: null}
       HA-RES-002: {result: not_applicable, confidence: high, evidence_refs: [ASL-C007-E009], remediation: null}
     not_applicable_rules:
@@ -348,7 +352,7 @@ compatibility:
       - HT-REPO-006
     skipped_rules: []
     observations:
-      - Hermes recognizes its nested metadata and all listed supported platforms.
+      - Hermes recognizes its nested metadata; the declaration lists all three documented platforms, but no target operating system was supplied.
       - Tool, environment, network, package, authentication, and service capabilities remain conditional because no target session was supplied.
       - Hub installation and GitHub-tap distribution were not requested.
 
