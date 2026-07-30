@@ -54,14 +54,18 @@ review:
   reviewer: identifier
   reviewed_at: ISO-8601-date-or-timestamp
   source_access: pinned-git-objects
+  source_network_accessed: false
   content_installed: false
   content_executed: false
-  sample_urls_contacted: false
+  skill_referenced_urls_contacted: false
+  third_party_content_vendored: false
   secret_values_accessed: false
 ```
 
 Manual review records what was and was not done. It must not be represented as an
 analyzer run with an invented command, exit code, duration, or execution environment.
+Network access used solely to retrieve a pinned source must be distinguished from
+contacting destinations named inside the inspected skill.
 
 ## Manual baseline
 
